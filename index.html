@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" href="logo.jpg" type="image/x-icon">
+	<title>Chúc mừng sinh nhật chị Trang </title>
+</head>
+<body>
+	<audio controls autoplay>
+  		<source src="Khuc-Hat-Mung-Sinh-Nhat-Phan-Dinh-Tung.mp3" type="audio/mpeg">
+	</audio>
+	<script type="text/javascript" src="lib.js"></script>
+	<script type="text/javascript">
+		var scrWidth = window.innerWidth;
+		var scrHeight = window.innerHeight;
+		var game = new Phaser.Game(scrWidth, scrHeight, Phaser.CANVAS, '', 
+			{preload: preload, create: create, update: update});
+		var message, roses, mt3, mt4, mt5, mt6, mt7, mt8, mt9, mt10,mt11,mt12, mt13, mt14, mt15, mt16, mt17, mt18, mt19, mt20,mt21,mt22, mt23, mt24, mt25,mt26;
+
+
+		function preload() {
+			game.load.spritesheet('firework1', 'firework1.png', 128, 128);
+			game.load.spritesheet('firework2', 'firework2.png', 128, 128);
+			game.load.spritesheet('firework3', 'firework3.png', 128, 128);
+			game.load.image('message', 'MT1.jpg');
+			game.load.image('roses', 'MT2.jpg');
+			game.load.image('mt3', 'MT3.jpg');
+			game.load.image('mt4', 'MT4.jpg');
+			game.load.image('mt5', 'MT5.jpg');
+			game.load.image('mt6', 'MT6.jpg');
+			game.load.image('mt7', 'MT7.jpg');
+			game.load.image('mt8', 'MT8.jpg');
+			game.load.image('mt9', 'MT9.jpg');
+			game.load.image('mt10', 'MT10.jpg');
+			game.load.image('mt11', 'MT11.jpg');
+			game.load.image('mt12', 'MT12.jpg');
+			game.load.image('mt13', 'MT13.jpg');
+			game.load.image('mt14', 'MT14.jpg');
+			game.load.image('mt15', 'MT15.jpg');
+			game.load.image('mt16', 'MT16.jpg');
+			game.load.image('mt17', 'MT17.jpg');
+			game.load.image('mt18', 'MT18.jpg');
+			game.load.image('mt19', 'MT19.jpg');
+			game.load.image('mt20', 'MT20.jpg');
+			game.load.image('mt21', 'MT21.jpg');
+			game.load.image('mt22', 'MT22.jpg');
+			game.load.image('mt23', 'MT23.jpg');
+			game.load.image('mt24', 'MT24.jpg');
+			game.load.image('mt25', 'MT25.jpg');
+			game.load.image('mt26', 'MT26.jpg');
+
+
+		}
+
+		function create() {
+			message = game.add.image(game.width/2, game.height/2, 'message');
+			message.anchor.setTo(0.5);
+			var messageScale = (scrWidth > scrHeight) ? game.height/(1.5*message.width) :
+			game.width/(1.5*message.width);
+			message.scale.setTo(messageScale);
+
+			game.time.events.repeat(100, 2000, function() {
+				for(var i = 0; i < 3; i++) {
+					var f1 = game.add.sprite(game.rnd.integerInRange(10, game.width - 10), 
+						game.rnd.integerInRange(10, game.height - 10), 'firework1');
+					f1.animations.add('fire1');
+					f1.animations.play('fire1', 20, false, true);
+
+					var f2 = game.add.sprite(game.rnd.integerInRange(10, game.width - 10), 
+						game.rnd.integerInRange(10, game.height - 10), 'firework2');
+					f2.animations.add('fire2');
+					f2.animations.play('fire2', 20, false, true);
+
+					var f3 = game.add.sprite(game.rnd.integerInRange(10, game.width - 10), 
+						game.rnd.integerInRange(10, game.height - 10), 'firework3');
+					f3.animations.add('fire3');
+					f3.animations.play('fire3', 20, false, true);
+				}
+			});
+
+			game.time.events.add(5000, function() {
+				var messageTwn = game.add.tween(message.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+				 messageTwn.onComplete.add(function() {
+				 	message.kill();
+				 	roses = game.add.image(game.width/2, game.height/2, 'roses');
+				 	roses.anchor.setTo(0.8);
+				 	var rosesScale = (scrWidth > scrHeight) ? game.height/(1.5*roses.width) : game.width/(1.5*roses.width);
+				 	roses.scale.setTo(0);
+
+				 	var rTwn = game.add.tween(roses.scale).to({x: rosesScale, y: rosesScale}, 1500, 'Linear', true, 200);
+
+
+						 	game.time.events.add(2800, function(){
+					 			rTwn = game.add.tween(roses.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+					 	    	rTwn.onComplete.add(function() {
+					 	 		roses.kill();
+					 			mt3 = game.add.image(game.width/2, game.height/2, 'mt3');
+					 			mt3.anchor.setTo(0.2);
+					 			var mt3Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt3.width) : 
+					 			game.width/(1.5*mt3.width);
+					 			mt3.scale.setTo(0);
+
+					 			var mt3Twn = game.add.tween(mt3.scale).to({x: mt3Scale, y: mt3Scale}, 1500, 'Linear', true, 200);
+					 				game.time.events.add(2800, function(){
+							 		mt3Twn = game.add.tween(mt3.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+							 	    mt3Twn.onComplete.add(function() {
+							 	 	mt3.kill();
+							 		mt4 = game.add.image(game.width/2, game.height/2, 'mt4');
+							 		mt4.anchor.setTo(0.7);
+							 		var mt4Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt4.width) : 
+							 		game.width/(1.5*mt4.width);
+							 		mt4.scale.setTo(0);
+
+							 		var mt4Twn = game.add.tween(mt4.scale).to({x: mt4Scale, y: mt4Scale}, 1500, 'Linear', true, 200);
+
+							 		game.time.events.add(2800, function(){
+									 mt4Twn = game.add.tween(mt4.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+									 mt4Twn.onComplete.add(function() {
+									 mt4.kill();
+									 mt5 = game.add.image(game.width/2, game.height/2, 'mt5');
+									 mt5.anchor.setTo(0.3);
+									 var mt5Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt5.width) : 
+									 game.width/(1.5*mt5.width);
+									 mt5.scale.setTo(0);
+
+									 var mt5Twn = game.add.tween(mt5.scale).to({x: mt5Scale, y: mt5Scale}, 1500, 'Linear', true, 200);
+									 game.time.events.add(2800, function(){
+									 mt5Twn = game.add.tween(mt5.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+									 mt5Twn.onComplete.add(function() {
+									 mt5.kill();
+									 mt6 = game.add.image(game.width/2, game.height/2, 'mt6');
+									 mt6.anchor.setTo(0.6);
+									 var mt6Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt6.width) : 
+									 game.width/(1.5*mt6.width);
+									 mt6.scale.setTo(0);
+
+									 var mt6Twn = game.add.tween(mt6.scale).to({x: mt6Scale, y: mt6Scale}, 1500, 'Linear', true, 200);
+
+							 					
+							 		game.time.events.add(2800, function(){
+									 mt6Twn = game.add.tween(mt6.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+									 	mt6Twn.onComplete.add(function() {
+									 	mt6.kill();
+									 	mt7 = game.add.image(game.width/2, game.height/2, 'mt7');
+									 	mt7.anchor.setTo(0.4);
+									 	var mt7Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt7.width) : 
+									 	game.width/(1.5*mt7.width);
+									 	mt7.scale.setTo(0);
+
+									 	var mt7Twn = game.add.tween(mt7.scale).to({x: mt7Scale, y: mt7Scale}, 1500, 'Linear', true, 200);
+
+							 			game.time.events.add(2800, function(){
+										 mt7Twn = game.add.tween(mt7.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt7Twn.onComplete.add(function() { 
+										 mt7.kill();
+										 mt8 = game.add.image(game.width/2, game.height/2, 'mt8');
+										 mt8.anchor.setTo(0.5);
+										 var mt8Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt8.width) : 
+										 game.width/(1.5*mt8.width);
+										 mt8.scale.setTo(0);
+
+										 var mt8Twn = game.add.tween(mt8.scale).to({x: mt8Scale, y: mt8Scale}, 1500, 'Linear', true, 200);
+							 			
+										 game.time.events.add(2800, function(){
+										 mt8Twn = game.add.tween(mt8.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt8Twn.onComplete.add(function() { 
+										 mt8.kill();
+										 mt9 = game.add.image(game.width/2, game.height/2, 'mt9');
+										 mt9.anchor.setTo(0.7);
+										 var mt9Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt9.width) : 
+										 game.width/(1.5*mt9.width);
+										 mt9.scale.setTo(0);
+
+										 var mt9Twn = game.add.tween(mt9.scale).to({x: mt9Scale, y: mt9Scale}, 1500, 'Linear', true, 200);
+										 game.time.events.add(2800, function(){
+										 mt9Twn = game.add.tween(mt9.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt9Twn.onComplete.add(function() { 
+										 mt9.kill();
+										 mt10 = game.add.image(game.width/2, game.height/2, 'mt10');
+										 mt10.anchor.setTo(0.3);
+										 var mt10Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt10.width) : 
+										 game.width/(1.5*mt10.width);
+										 mt10.scale.setTo(0);
+
+										 var mt10Twn = game.add.tween(mt10.scale).to({x: mt10Scale, y: mt10Scale}, 1500, 'Linear', true, 200);
+										 game.time.events.add(2800, function(){
+										 mt10Twn = game.add.tween(mt10.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt10Twn.onComplete.add(function() { 
+										 mt10.kill();
+										 mt11 = game.add.image(game.width/2, game.height/2, 'mt11');
+										 mt11.anchor.setTo(0.7);
+										 var mt11Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt11.width) : 
+										 game.width/(1.5*mt11.width);
+										 mt11.scale.setTo(0);
+
+										 var mt11Twn = game.add.tween(mt11.scale).to({x: mt11Scale, y: mt11Scale}, 1500, 'Linear', true, 200);
+										 game.time.events.add(2800, function(){
+										 mt11Twn = game.add.tween(mt11.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt11Twn.onComplete.add(function() { 
+										 mt11.kill();
+										 mt12 = game.add.image(game.width/2, game.height/2, 'mt12');
+										 mt12.anchor.setTo(0.3);
+										 var mt12Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt12.width) : 
+										 game.width/(1.5*mt12.width);
+										 mt12.scale.setTo(0);
+
+										 var mt12Twn = game.add.tween(mt12.scale).to({x: mt12Scale, y: mt12Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt12Twn = game.add.tween(mt12.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt12Twn.onComplete.add(function() { 
+										 mt12.kill();
+										 mt13 = game.add.image(game.width/2, game.height/2, 'mt13');
+										 mt13.anchor.setTo(0.7);
+										 var mt13Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt13.width) : 
+										 game.width/(1.5*mt13.width);
+										 mt13.scale.setTo(0);
+
+										 var mt13Twn = game.add.tween(mt13.scale).to({x: mt13Scale, y: mt13Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt13Twn = game.add.tween(mt13.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt13Twn.onComplete.add(function() { 
+										 mt13.kill();
+										 mt14 = game.add.image(game.width/2, game.height/2, 'mt14');
+										 mt14.anchor.setTo(0.3);
+										 var mt14Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt14.width) : 
+										 game.width/(1.5*mt14.width);
+										 mt14.scale.setTo(0);
+
+										 var mt14Twn = game.add.tween(mt14.scale).to({x: mt14Scale, y: mt14Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt14Twn = game.add.tween(mt14.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt14Twn.onComplete.add(function() { 
+										 mt14.kill();
+										 mt15 = game.add.image(game.width/2, game.height/2, 'mt15');
+										 mt15.anchor.setTo(0.6);
+										 var mt15Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt15.width) : 
+										 game.width/(1.5*mt15.width);
+										 mt15.scale.setTo(0);
+
+										 var mt15Twn = game.add.tween(mt15.scale).to({x: mt15Scale, y: mt15Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt15Twn = game.add.tween(mt15.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt15Twn.onComplete.add(function() { 
+										 mt15.kill();
+										 mt16 = game.add.image(game.width/2, game.height/2, 'mt16');
+										 mt16.anchor.setTo(0.4);
+										 var mt16Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt16.width) : 
+										 game.width/(1.5*mt16.width);
+										 mt16.scale.setTo(0);
+
+										 var mt16Twn = game.add.tween(mt16.scale).to({x: mt16Scale, y: mt16Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt16Twn = game.add.tween(mt16.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt16Twn.onComplete.add(function() { 
+										 mt16.kill();
+										 mt17 = game.add.image(game.width/2, game.height/2, 'mt17');
+										 mt17.anchor.setTo(0.7);
+										 var mt17Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt17.width) : 
+										 game.width/(1.5*mt17.width);
+										 mt17.scale.setTo(0);
+
+										 var mt17Twn = game.add.tween(mt17.scale).to({x: mt17Scale, y: mt17Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt17Twn = game.add.tween(mt17.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt17Twn.onComplete.add(function() { 
+										 mt17.kill();
+										 mt18 = game.add.image(game.width/2, game.height/2, 'mt18');
+										 mt18.anchor.setTo(0.3);
+										 var mt18Scale = (scrWidth > scrHeight) ? game.height/(1.35*mt18.width) : 
+										 game.width/(1.35*mt18.width);
+										 mt18.scale.setTo(0);
+
+										 var mt18Twn = game.add.tween(mt18.scale).to({x: mt18Scale, y: mt18Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt18Twn = game.add.tween(mt18.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt18Twn.onComplete.add(function() { 
+										 mt8.kill();
+										 mt19 = game.add.image(game.width/2, game.height/2, 'mt19');
+										 mt19.anchor.setTo(0.6);
+										 var mt19Scale = (scrWidth > scrHeight) ? game.height/(1.25*mt19.width) : 
+										 game.width/(1.25*mt19.width);
+										 mt19.scale.setTo(0);
+
+										 var mt19Twn = game.add.tween(mt19.scale).to({x: mt19Scale, y: mt19Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt19Twn = game.add.tween(mt19.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt19Twn.onComplete.add(function() { 
+										 mt19.kill();
+										 mt20 = game.add.image(game.width/2, game.height/2, 'mt20');
+										 mt20.anchor.setTo(0.4);
+										 var mt20Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt20.width) : 
+										 game.width/(1.5*mt20.width);
+										 mt20.scale.setTo(0);
+
+										 var mt20Twn = game.add.tween(mt20.scale).to({x: mt20Scale, y: mt20Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt20Twn = game.add.tween(mt20.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt20Twn.onComplete.add(function() { 
+										 mt20.kill();
+										 mt21 = game.add.image(game.width/2, game.height/2, 'mt21');
+										 mt21.anchor.setTo(0.7);
+										 var mt21Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt21.width) : 
+										 game.width/(1.5*mt21.width);
+										 mt21.scale.setTo(0);
+
+										 var mt21Twn = game.add.tween(mt21.scale).to({x: mt21Scale, y: mt21Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt21Twn = game.add.tween(mt21.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt21Twn.onComplete.add(function() { 
+										 mt21.kill();
+										 mt22 = game.add.image(game.width/2, game.height/2, 'mt22');
+										 mt22.anchor.setTo(0.3);
+										 var mt22Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt22.width) : 
+										 game.width/(1.5*mt22.width);
+										 mt22.scale.setTo(0);
+
+										 var mt22Twn = game.add.tween(mt22.scale).to({x: mt22Scale, y: mt22Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt22Twn = game.add.tween(mt22.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt22Twn.onComplete.add(function() { 
+										 mt22.kill();
+										 mt23 = game.add.image(game.width/2, game.height/2, 'mt23');
+										 mt23.anchor.setTo(0.6);
+										 var mt23Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt23.width) : 
+										 game.width/(1.5*mt23.width);
+										 mt23.scale.setTo(0);
+
+										 var mt23Twn = game.add.tween(mt23.scale).to({x: mt23Scale, y: mt23Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt23Twn = game.add.tween(mt23.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt23Twn.onComplete.add(function() { 
+										 mt23.kill();
+										 mt24 = game.add.image(game.width/2, game.height/2, 'mt24');
+										 mt24.anchor.setTo(0.4);
+										 var mt24Scale = (scrWidth > scrHeight) ? game.height/(1.5*mt24.width) : 
+										 game.width/(1.5*mt24.width);
+										 mt24.scale.setTo(0);
+
+										 var mt24Twn = game.add.tween(mt24.scale).to({x: mt24Scale, y: mt24Scale}, 1500, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt24Twn = game.add.tween(mt24.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt24Twn.onComplete.add(function() { 
+										 mt24.kill();
+										 mt25 = game.add.image(game.width/2, game.height/2, 'mt25');
+										 mt25.anchor.setTo(0.5);
+										 var mt25Scale = (scrWidth > scrHeight) ? game.height/(1.25*mt25.width) : 
+										 game.width/(1.25*mt25.width);
+										 mt25.scale.setTo(0);
+
+										 var mt25Twn = game.add.tween(mt25.scale).to({x: mt25Scale, y: mt25Scale}, 2000, 'Linear', true, 200);
+							 			game.time.events.add(2800, function(){
+										 mt25Twn = game.add.tween(mt25.scale).to({x: 0, y: 0}, 1000, 'Linear', true);
+										 mt25Twn.onComplete.add(function() { 
+										 mt25.kill();
+										 mt26 = game.add.image(game.width/2, game.height/2, 'mt26');
+										 mt26.anchor.setTo(0.5);
+										 var mt26Scale = (scrWidth > scrHeight) ? game.height/(1.1*mt26.width) : 
+										 game.width/(1.1*mt26.width);
+										 mt26.scale.setTo(0);
+
+										 var mt26Twn = game.add.tween(mt26.scale).to({x: mt26Scale, y: mt26Scale}, 3000, 'Linear', true, 200);
+							 					
+													});
+												});		
+													});
+												});		
+													});
+												});			
+													});
+												});			
+													});
+												});			
+													});
+												});		
+													});
+												});		
+													});
+												});		
+													});
+												});		
+													});
+												});		
+													});
+												});		
+													});
+												});		
+													});
+												});		
+													});
+												});			
+													});
+												});	
+													});
+												});
+													});
+												});
+													});
+												});
+											});
+										});
+									}); 
+								});
+							});
+						});
+					});
+				});
+			});
+		});
+	});
+});
+});
+});
+}
+
+		function update() {
+			if(message) {
+				game.world.bringToTop(message);
+			}
+			if(roses){
+				game.world.bringToTop(roses);
+			}
+			if(mt3){
+				game.world.bringToTop(mt3);
+			}
+			if(mt4){
+				game.world.bringToTop(mt4);
+			}
+			if(mt5){
+				game.world.bringToTop(mt5);
+			}
+			if(mt6){
+				game.world.bringToTop(mt6);
+			}
+			if(mt7){
+				game.world.bringToTop(mt7);
+			}
+			if(mt8){
+				game.world.bringToTop(mt8);
+			}
+			if(mt9){
+				game.world.bringToTop(mt9);
+			}
+			if(mt10){
+				game.world.bringToTop(mt10);
+			}
+			if(mt11){
+				game.world.bringToTop(mt11);
+			}
+			if(mt12){
+				game.world.bringToTop(mt12);
+			}
+			if(mt13){
+				game.world.bringToTop(mt13);
+			}
+			if(mt14){
+				game.world.bringToTop(mt14);
+			}
+			if(mt15){
+				game.world.bringToTop(mt15);
+			}
+			if(mt16){
+				game.world.bringToTop(mt16);
+			}
+			if(mt17){
+				game.world.bringToTop(mt17);
+			}
+			if(mt18){
+				game.world.bringToTop(mt18);
+			}
+			if(mt19){
+				game.world.bringToTop(mt19);
+			}
+			if(mt20){
+				game.world.bringToTop(mt20);
+			}
+			if(mt21){
+				game.world.bringToTop(mt21);
+			}
+			if(mt22){
+				game.world.bringToTop(mt22);
+			}
+			if(mt23){
+				game.world.bringToTop(mt23);
+			}
+			if(mt24){
+				game.world.bringToTop(mt24);
+			}
+			if(mt25){
+				game.world.bringToTop(mt25);
+			}
+			if(mt26){
+				game.world.bringToTop(mt26);
+			}
+
+		}
+	</script>
+</body>
+</html>
